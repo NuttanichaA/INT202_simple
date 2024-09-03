@@ -12,14 +12,21 @@
     <title>Title</title>
 </head>
 <body>
-    <%Subject subject = (Subject) request.getAttribute("subject");%>
-    <%if(subject != null){%>
-    <label>Subject ID: <input type="text" disabled value="<%= subject.getId()%>"><br></label>
-    <label>Title: <input type="text" disabled value="<%= subject.getTitle()%>"><br></label>
-    <label>Credit: <input type="text" disabled value="<%= subject.getCredit()%>"><br></label>
-    <%}else{%>
-    <h2> Subject code: <%request.getParameter("sID");%> does not exist </h2>
-    <%}%>
+<%--    <%Subject subject = (Subject) request.getAttribute("subject");%>--%>
+<%--    <%if(subject != null){%>--%>
+<%--    <label>Subject ID: <input type="text" disabled value="<%= subject.getId()%>"><br></label>--%>
+<%--    <label>Title: <input type="text" disabled value="<%= subject.getTitle()%>"><br></label>--%>
+<%--    <label>Credit: <input type="text" disabled value="<%= subject.getCredit()%>"><br></label>--%>
+<%--    <%}else{%>--%>
+<%--    <h2> Subject code: <%request.getParameter("sID");%> does not exist </h2>--%>
+<%--    <%}%>--%>
+<%--    <hr>--%>
+<%--    <a href="subject-list">Subject List</a>--%>
+
+<%-- Ver. EL --%>
+    <label>Subject ID: <input type="text" disabled value="${subject.id}"><br></label>
+    <label>Title: <input type="text" disabled value="${subject.title}"><br></label>
+    <label>Credit: <input type="text" disabled value="${subject.credit}"><br></label>
     <hr>
     <a href="subject-list">Subject List</a>
 </body>
