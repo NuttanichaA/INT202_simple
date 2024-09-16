@@ -11,5 +11,9 @@
 <a href="hello-servlet">Hello Servlet</a>
 <br>
 <a href="my-info">My Information</a>
+<br>
+<a href="subject-list">Subject-list</a>
+<br>
+<a href="find_subject.jsp">Find Subject</a>
 </body>
 </html>

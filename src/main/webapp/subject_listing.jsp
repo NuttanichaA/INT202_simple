@@ -16,7 +16,7 @@
 <table>
     <tr><th>Subject code</th><th>Title</th><th>Credit</th></tr>
     <c:forEach items="${subjects}" var="subject">
-    <tr><td><a href="find-subject?sID=${subject.id}"> ${subject.id}</a></td>
+    <tr><td><a href="subject-info?sID=${subject.id}"> ${subject.id}</a></td>
         <td>${subject.title}</td>
         <td>${subject.credit}</td></tr>
     </c:forEach>
@@ -32,5 +32,7 @@
 <%--    <td><%= s.getCredit()%></td></tr>--%>
 <%--    <% }%>--%>
 <%--</table>--%>
+<br>
+<a href="index.jsp">back</a>
 </body>
 </html>

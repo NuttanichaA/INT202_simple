@@ -9,10 +9,9 @@ import sit.int202.simple.entities.Subject;
 import sit.int202.simple.repositories.SubjectRepository;
 
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet(name = "subject-info", value = "/find-subject")
-public class FindSubjectServlet extends HttpServlet {
+@WebServlet(name = "subject-info", value = "/subject-info")
+public class SubjectInfoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
     ServletException, IOException {
@@ -26,6 +25,11 @@ public class FindSubjectServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws
     ServletException, IOException {
-
+        String subjectID = request.getParameter("subjectID");
+        request.setAttribute("subjectID", subjectID);
+        SubjectRepository subjectRepository = new SubjectRepository();
+        Subject subject = subjectRepository.findById(subjectID);
+        request.setAttribute("subject",subject);
+        request.getRequestDispatcher("/subject_info.jsp").forward(request,response);
     }
     }
